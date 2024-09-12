@@ -7,11 +7,13 @@ on:
     branches:
       - production
       - release/*
+      - "!preview/*"
       - "!development/*"
   pull_request:
     branches:
       - production
       - release/*
+      - "!preview/*"
       - "!development/*"
   # A push is made to a GitHub Pages-enabled branch
   page_build:
