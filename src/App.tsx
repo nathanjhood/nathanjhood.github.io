@@ -11,6 +11,7 @@ import {
   type TextStyle,
   type ViewStyle
 } from 'react-native';
+import { Analytics } from '@vercel/analytics/react';
 // import styles from "./App.styles";
 import logo from './logo.svg';
 
@@ -77,9 +78,10 @@ const App = (props?: React.PropsWithChildren) => {
           // target="_blank"
           // rel="noopener noreferrer"
         >
-          Powered by esbuild with Typescript
+          Powered by React Native Web esbuild and Typescript
         </Text>
       </View>
+      <Analytics />
     </View>
   )
 
