@@ -1,17 +1,8 @@
 name: node
 
 on:
-  # Runs on pushes targeting the default branch
+  # Runs on all pushes
   push:
-    branches:
-      - production
-      - release/*
-      - "!development/*"
-  pull_request:
-    branches:
-      - production
-      - release/*
-      - "!development/*"
   # A push is made to a GitHub Pages-enabled branch
   page_build:
   # Allows you to run this workflow manually from the Actions tab
