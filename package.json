@@ -17,7 +17,7 @@
     "format:fix": "prettier --write ./**/*.{js,jsx,ts,tsx,css,md,json} --config ./prettier.config.mjs"
   },
   "dependencies": {
-    "@nathanjhood/esbuild-scripts": "https://github.com/nathanjhood/esbuild-scripts.git#feat/script_build",
+    "@nathanjhood/esbuild-scripts": "https://github.com/nathanjhood/esbuild-scripts.git",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.1",
