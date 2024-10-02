@@ -1,33 +1,46 @@
-import * as React from 'react';
-import { test, expect, describe, it, afterEach } from '@jest/globals';
-import { render, screen, cleanup } from '@testing-library/react';
-import App from './App';
+import type React = require('react');
+import type Test = require('node:test');
+import type TestingLibrary = require('@testing-library/react');
+import react = require('react');
+import test = require('node:test');
+import testingLibrary = require('@testing-library/react');
+import App = require('./App');
 
-const timeout = 10000;
+const { describe, it, afterEach } = test;
+const { cleanup, render, screen }: typeof TestingLibrary = testingLibrary;
 
-afterEach(() => {
+const timeout: number = 10000;
+
+afterEach((ctx, done) => {
   cleanup();
-}, timeout);
+  done();
+}, {
+  timeout: timeout
+});
 
-describe('App', () => {
+describe('App', { timeout: timeout }, (suiteCtx: Test.SuiteContext) => {
   it(
-    'renders successfully',
-    () => {
-      test('render (strict)', () => {
-        render(
-          <React.StrictMode>
+    'renders successfully', { signal: suiteCtx.signal },
+    async () => {
+      //
+      const result = render(
+          <react.StrictMode>
             <App />
-          </React.StrictMode>
-        );
-        const linkElement = screen.getByText(/Welcome to React Native/i);
-        expect(linkElement).toBeDefined();
-      })
-      test('render', () => {
-        render(<App />);
-        const linkElement = screen.getByText(/Welcome to React Native/i);
-        expect(linkElement).toBeDefined();
-      })
+          </react.StrictMode>
+      );
+      //
+      const message: RegExp = /Welcome to React Native/i;
+      //
+      (await it('render (strict)', (ctx: Test.TestContext, done) => {
+        ctx.assert.ok(screen.getByText(message));
+        ctx.assert.ok(result.getByText(message));
+        return done();
+      }));
+      (await it('render', (ctx: Test.TestContext, done) => {
+        ctx.assert.ok(screen.getByText(message));
+        ctx.assert.ok(result.getByText(message));
+        return done();
+      }));
     },
-    timeout
   );
 });
