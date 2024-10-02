@@ -21,7 +21,7 @@
     "node": ">=20"
   },
   "dependencies": {
-    "@nathanjhood/esbuild-scripts": "https://github.com/nathanjhood/esbuild-scripts",
+    "@nathanjhood/esbuild-scripts": "https://github.com/nathanjhood/esbuild-scripts.git",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.1",

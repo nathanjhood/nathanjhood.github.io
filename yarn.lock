@@ -1669,9 +1669,9 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@nathanjhood/esbuild-scripts@https://github.com/nathanjhood/esbuild-scripts":
-  version "0.0.1-ab87ca3f38e991d179d6cef3e10412234539bbbf"
-  resolved "https://github.com/nathanjhood/esbuild-scripts#a51ee9e7fc98d443ce492ea914f4f150b8fef9e5"
+"@nathanjhood/esbuild-scripts@https://github.com/nathanjhood/esbuild-scripts.git":
+  version "0.0.1"
+  resolved "https://github.com/nathanjhood/esbuild-scripts.git#420d32750144ffb9fd669c7aaac72c1f0e578c14"
   dependencies:
     browserslist "^4.24.0"
     ms "^2.1.3"
