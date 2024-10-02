@@ -1791,7 +1791,7 @@
 
 "@nathanjhood/esbuild-scripts@https://github.com/nathanjhood/esbuild-scripts.git":
   version "0.0.1"
-  resolved "https://github.com/nathanjhood/esbuild-scripts.git#420d32750144ffb9fd669c7aaac72c1f0e578c14"
+  resolved "https://github.com/nathanjhood/esbuild-scripts.git#9facaf7f77ab37a6a31d7daee53f0077215a2fb7"
   dependencies:
     browserslist "^4.24.0"
     ms "^2.1.3"
