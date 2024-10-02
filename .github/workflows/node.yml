@@ -32,7 +32,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        node-version: [ 20.17, latest ]
+        node-version: [ 20, latest ]
 
     runs-on: ${{ matrix.os }}
 
@@ -60,7 +60,7 @@ jobs:
       - name: Install
         shell: bash
         working-directory: ${{ github.workspace }}
-        run: yarn
+        run: yarn --frozen-lockfile
 
       - name: Build
         shell: bash
