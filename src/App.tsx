@@ -81,7 +81,8 @@ const App: App = (props?: AppProps) => {
       <View style={styles.header}>
         <Logo />
         <Text style={styles.p}>
-          Edit <Text style={styles.code}>src/App.tsx</Text> and save to reload.
+          Under construction...
+            { /** Edit <Text style={styles.code}>src/App.tsx</Text> and save to reload. */ }
         </Text>
         <Text
           style={styles.link}
@@ -89,7 +90,7 @@ const App: App = (props?: AppProps) => {
           // target="_blank"
           // rel="noopener noreferrer"
         >
-          Powered by React Native Web esbuild and Typescript
+          Powered by React Native with esbuild and Typescript
         </Text>
       </View>
       <Analytics />
