@@ -62,11 +62,6 @@ jobs:
         working-directory: ${{ github.workspace }}
         run: yarn
 
-      # - name: Test
-      #   shell: bash
-      #   working-directory: ${{ github.workspace }}
-      #   run: yarn test
-
       - name: Build
         shell: bash
         env:
