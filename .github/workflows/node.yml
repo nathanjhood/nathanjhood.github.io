@@ -4,7 +4,7 @@ on:
   # Runs on all pushes
   push:
   # A push is made to a GitHub Pages-enabled branch
-  page_build:
+  # page_build:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -17,7 +17,7 @@ env:
   PROJECT_NAME: 'esbuild-scripts'
   PROJECT_VERSION: '0.0.0-${{ github.sha }}'
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  NODE_ENV: "production"
+  # NODE_ENV: "production"
   BUILD_DIR: "dist"
   PUBLIC_URL: "https://nathanjhood.github.io/"
   HOST: "nathanjhood.github.io"
@@ -66,6 +66,13 @@ jobs:
       #   shell: bash
       #   working-directory: ${{ github.workspace }}
       #   run: yarn test
+
+      - name: Build
+        shell: bash
+        env:
+          NODE_ENV: production
+        working-directory: ${{ github.workspace }}
+        run: yarn build
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
