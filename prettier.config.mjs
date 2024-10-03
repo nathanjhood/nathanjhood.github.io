@@ -23,7 +23,7 @@ const config = {
   /** custom */
   semi: true,
   singleQuote: true,
-  parser: 'babel', // inferred from environment
+  // parser: 'babel', // inferred from environment
 };
 
 export default config;

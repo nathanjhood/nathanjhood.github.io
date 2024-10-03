@@ -1,74 +1,85 @@
-import * as React from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  useWindowDimensions,
-  useColorScheme,
-  Animated,
-  Easing,
-  type ImageStyle,
-  type TextStyle,
-  type ViewStyle
-} from 'react-native';
-import { Analytics } from '@vercel/analytics/react';
-// import styles from "./App.styles";
-import logo from './logo.svg';
+import type React = require('react');
+import type ReactNative = require('react-native');
+import rn = require('react-native');
+import va = require('@vercel/analytics/react');
+import Logo = require('./components/Logo');
 
-const App = (props?: React.PropsWithChildren) => {
+type AppProps = React.PropsWithChildren<{
+  verbose?: true | false;
+}>
+
+interface App {
+  (): React.JSX.Element
+  (props?: AppProps): React.JSX.Element
+}
+const App: App = (props?: AppProps) => {
+
+  const {
+    StyleSheet,
+    Text,
+    View,
+    useWindowDimensions,
+    useColorScheme,
+  } = rn;
+
+  const { Analytics } = va;
 
   const { width, height, scale, fontScale } = useWindowDimensions();
   const colorScheme = useColorScheme();
 
-  const spinValue = new Animated.Value(0);
+  const styles: {
+    app: ReactNative.ViewStyle;
+    header: ReactNative.ViewStyle;
+    code: ReactNative.TextStyle;
+    p: ReactNative.TextStyle;
+    link: ReactNative.TextStyle;
+} = StyleSheet.create<
+  {
+    app: ReactNative.ViewStyle,
+    header: ReactNative.ViewStyle,
+    code: ReactNative.TextStyle,
+    p: ReactNative.TextStyle,
+    link: ReactNative.TextStyle,
+  }>(
+  {
+    app: {
+      textAlign: 'center',
+    },
+    header: {
+      color: 'white',
+      backgroundColor: '#282c34',
 
-  const spinTiming = Animated.timing(
-      spinValue,
-      {
-        toValue: 1,
-        duration: 20000, // 20 seconds
-        easing: Easing.linear, // Easing is an additional import from react-native
-        useNativeDriver: false // true  // To make use of native driver for performance
-      }
-    )
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontSize: '10px + 2vmin',
+    },
 
-  // First set up animation
-  const animation = Animated.loop(spinTiming)
-
-  // Next, interpolate beginning and end values (in this case 0 and 1)
-  const spin = spinValue.interpolate({
-    inputRange: [0, 1],
-    outputRange: ['0deg', '360deg']
-  })
+    code: {
+      fontFamily: 'monospace, monospace',
+    },
+    p: {
+      color: 'white',
+    },
+    link: {
+      color: '#61dafb',
+    },
+  });
 
   return (
-    <View style={[styles.app, { height: height }, StyleSheet.absoluteFill]}>
+    <View style={[
+      styles.app,
+      {
+        width: width,
+        height: height,
+        scale: scale
+      },
+      StyleSheet.absoluteFill
+    ]}>
       <View style={styles.header}>
-        <Animated.Image
-          style={[styles.logo, { transform: [{ rotate: spin }] }]}
-          source={{ uri: "data:image/svg+xml;base64," + logo }}
-          onLoadStart={
-            () => {
-              animation.reset();
-              console.info("Loading image...");
-              return;
-            }
-          }
-          onLoadEnd={
-            () => {
-              animation.start();
-              console.info("Loaded image...");
-              return;
-            }
-          }
-          onError={
-            (error) => {
-              animation.stop();
-              console.error(error);
-              return;
-            }
-          }
-        />
+        <Logo />
         <Text style={styles.p}>
           Under construction...
             { /** Edit <Text style={styles.code}>src/App.tsx</Text> and save to reload. */ }
@@ -84,49 +95,8 @@ const App = (props?: React.PropsWithChildren) => {
       </View>
       <Analytics />
     </View>
-  )
+  ) satisfies React.JSX.Element
 
 }
 
-export default App;
-
-const styles = StyleSheet.create<
-{
-  app: ViewStyle,
-  header: ViewStyle,
-  logo: ImageStyle,
-  code: TextStyle,
-  p: TextStyle,
-  link: TextStyle,
-}>(
-{
-  app: {
-    textAlign: 'center',
-  },
-  header: {
-    color: 'white',
-    backgroundColor: '#282c34',
-
-    minHeight: '100vh',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontSize: '10px + 2vmin',
-  },
-  logo: {
-    width: 500,
-    height: 500,
-    pointerEvents: 'none',
-  },
-  code: {
-    fontFamily: 'monospace, monospace',
-  },
-  p: {
-    color: 'white',
-  },
-  link: {
-    color: '#61dafb',
-  },
-}
-);
+export = App;
