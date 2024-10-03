@@ -3,7 +3,16 @@
   "cmake.configureOnOpen": false,
   "cmake.configureOnEdit": false,
   "eslint.enable": true,
-  "eslint.format.enable": false,
+  "eslint.format.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always",
+    "source.fixAll.ts": "always",
+    "source.organizeImports": "always",
+    "source.sortImports": "always",
+    "source.addMissingImports.ts": "never",
+    "source.removeUnused.ts": "never",
+    "source.removeUnusedImports": "never"
+  },
   "prettier.enable": true,
   "prettier.useEditorConfig": true,
   "prettier.configPath": "prettier.config.mjs",
@@ -39,14 +48,14 @@
       "strings": true
     },
     "editor.suggest.insertMode": "replace",
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[jsonc]": {
     "editor.quickSuggestions": {
       "strings": true
     },
     "editor.suggest.insertMode": "replace",
-    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[markdown]": {
     "editor.unicodeHighlight.ambiguousCharacters": false,
@@ -58,7 +67,7 @@
       "strings": "off",
       "other": "off"
     },
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[css]": {
     "editor.suggest.insertMode": "replace",
