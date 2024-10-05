@@ -6,6 +6,8 @@ import App = require('./App');
 import AppJson = require('../app.json');
 import serviceWorker = require('./serviceWorker');
 
+import './assets/css/nativewind/base.css';
+
 interface index {
   (app: React.ComponentType<any>): void;
   (app: React.ComponentType<any>, useSwr: true | false): void;
