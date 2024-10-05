@@ -42,18 +42,27 @@
     "declaration": true,
     "emitDeclarationOnly": true,
     "skipLibCheck": false,
-    "tsBuildInfoFile": ".cache/.tsbuildinfo"
+    "tsBuildInfoFile": ".cache/.tsbuildinfo",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
+    "tailwind.config.ts",
     "**/**/*.d.ts",
     "lib",
     "src",
     "**/**/*.mjs",
     "**/**/*.js",
     "**/**/*.json",
-    "**/**/*.ts"
+    "**/**/*.ts",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
+    "postcss.config.js",
     "eslint.config.mjs",
     "prettier.config.mjs",
     "node_modules",

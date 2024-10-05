@@ -1,71 +1,39 @@
-import type React = require('react');
+// import type React from 'react';
 import type ReactNative = require('react-native');
 import rn = require('react-native');
-import va = require('@vercel/analytics/react');
-import Logo = require('./components/Logo');
+import AnalyticsProvider = require('./providers/analytics');
+import Home = require('./components/Home')
 
 type AppProps = React.PropsWithChildren<{
   verbose?: true | false;
 }>
 
 interface App {
-  (): React.JSX.Element
-  (props?: AppProps): React.JSX.Element
+  (): JSX.Element
+  (props?: AppProps): JSX.Element
 }
-const App: App = (props?: AppProps) => {
+const App: App = (props?: AppProps): JSX.Element => {
 
   const {
     StyleSheet,
-    Text,
     View,
     useWindowDimensions,
     useColorScheme,
   } = rn;
-
-  const { Analytics } = va;
 
   const { width, height, scale, fontScale } = useWindowDimensions();
   const colorScheme = useColorScheme();
 
   const styles: {
     app: ReactNative.ViewStyle;
-    header: ReactNative.ViewStyle;
-    code: ReactNative.TextStyle;
-    p: ReactNative.TextStyle;
-    link: ReactNative.TextStyle;
 } = StyleSheet.create<
   {
     app: ReactNative.ViewStyle,
-    header: ReactNative.ViewStyle,
-    code: ReactNative.TextStyle,
-    p: ReactNative.TextStyle,
-    link: ReactNative.TextStyle,
   }>(
   {
     app: {
       textAlign: 'center',
-    },
-    header: {
-      color: 'white',
-      backgroundColor: '#282c34',
-
-      minHeight: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontSize: '10px + 2vmin',
-    },
-
-    code: {
-      fontFamily: 'monospace, monospace',
-    },
-    p: {
-      color: 'white',
-    },
-    link: {
-      color: '#61dafb',
-    },
+    }
   });
 
   return (
@@ -78,25 +46,11 @@ const App: App = (props?: AppProps) => {
       },
       StyleSheet.absoluteFill
     ]}>
-      <View style={styles.header}>
-        <Logo />
-        <Text style={styles.p}>
-          Under construction...
-            { /** Edit <Text style={styles.code}>src/App.tsx</Text> and save to reload. */ }
-        </Text>
-        <Text
-          style={styles.link}
-          href="https://github.com/nathanjhood/ts-esbuild-react-native-web"
-          // target="_blank"
-          // rel="noopener noreferrer"
-        >
-          Powered by React Native with esbuild and Typescript
-        </Text>
-      </View>
-      <Analytics />
+      <AnalyticsProvider>
+        <Home />
+      </AnalyticsProvider>
     </View>
-  ) satisfies React.JSX.Element
-
+  ) satisfies JSX.Element
 }
 
 export = App;

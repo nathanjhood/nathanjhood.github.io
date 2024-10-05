@@ -39,7 +39,7 @@ const Logo: Logo = (props?: LogoProps) => {
   const spinTiming = Animated.timing(
       spinValue,
       {
-        toValue: 1,
+        toValue: 1, // from 0
         duration: 20000, // 20 seconds
         easing: Easing.linear, // Easing is an additional import from react-native
         useNativeDriver: false // true  // To make use of native driver for performance
