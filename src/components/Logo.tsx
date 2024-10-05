@@ -24,15 +24,11 @@ const Logo: Logo = (props?: LogoProps) => {
   const {
     Animated,
     Easing,
-    // Image,
-    useWindowDimensions
   }: typeof ReactNative = rn;
 
   const source: ReactNative.ImageSourcePropType = {
     uri: "data:image/svg+xml;base64," + logo
-  }
-
-  const { width, height } = useWindowDimensions()
+  };
 
   const spinValue = new Animated.Value(0);
 
@@ -42,7 +38,7 @@ const Logo: Logo = (props?: LogoProps) => {
         toValue: 1, // from 0
         duration: 20000, // 20 seconds
         easing: Easing.linear, // Easing is an additional import from react-native
-        useNativeDriver: false // true  // To make use of native driver for performance
+        useNativeDriver: true  // To make use of native driver for performance
       }
     )
 
@@ -74,8 +70,8 @@ const Logo: Logo = (props?: LogoProps) => {
       style={[
         {
           pointerEvents: 'none',
-          width: (width * 0.5), // 841.9,
-          height: (height * 0.5) //595.3,
+          width: props?.width || 841.9,
+          height: props?.height || 595.3,
         }, {
           transform: [{ rotate: spin }]
         }]}

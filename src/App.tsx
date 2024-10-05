@@ -18,11 +18,9 @@ const App: App = (props?: AppProps): JSX.Element => {
     StyleSheet,
     View,
     useWindowDimensions,
-    useColorScheme,
   } = rn;
 
-  const { width, height, scale, fontScale } = useWindowDimensions();
-  const colorScheme = useColorScheme();
+  const { width, height, scale } = useWindowDimensions();
 
   const styles: {
     app: ReactNative.ViewStyle;
