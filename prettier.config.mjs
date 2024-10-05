@@ -24,6 +24,7 @@ const config = {
   semi: true,
   singleQuote: true,
   // parser: 'babel', // inferred from environment
+  plugins: ["prettier-plugin-tailwindcss"]
 };
 
 export default config;

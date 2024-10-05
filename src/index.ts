@@ -1,10 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React = require('react');
+import type React from 'react';
 import type ReactNative = require('react-native');
 import rn = require('react-native');
 import App = require('./App');
 import AppJson = require('../app.json');
 import serviceWorker = require('./serviceWorker');
+
+import './assets/css/nativewind/base.css';
 
 interface index {
   (app: React.ComponentType<any>): void;
@@ -32,4 +34,4 @@ const index = (app: React.ComponentType<any>, useSwr: true | false = false) => {
   });
 }
 
-export = index(App);
+export = index(App, true);

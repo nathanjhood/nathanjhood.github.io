@@ -1,8 +1,8 @@
 /// <reference types="react" />
 /// <reference types="react-native" />
 
-import { StyleProp } from "react-native";
 import * as RN from "react-native";
+import { StyleProp } from "react-native";
 
 declare module "react-native" {
   /**
