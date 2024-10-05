@@ -15,7 +15,7 @@ const Home = (props?: HomeProps): React.JSX.Element => {
   const {
     StyleSheet,
     Text,
-    View
+    View,
   } = rn;
 
   const styles: {
@@ -32,15 +32,12 @@ const Home = (props?: HomeProps): React.JSX.Element => {
   }>(
   {
     header: {
-      color: 'white',
-      backgroundColor: '#282c34',
-
       minHeight: '100vh',
+      fontSize: '10px + 2vmin',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      justifyContent: 'center',
-      fontSize: '10px + 2vmin',
+
     },
 
     code: {
@@ -55,20 +52,28 @@ const Home = (props?: HomeProps): React.JSX.Element => {
   });
 
   return (
-    <View style={styles.header}>
+    <View style={{
+      color: 'white',
+      backgroundColor: '#282c34',
+      alignItems: 'center',
+      justifyContent: 'center',
+    }}>
       <Logo />
-      <Text style={styles.p}>
-        <Text style={styles.code}>Under construction...</Text>
-      </Text>
-      <View style={{ height: 12 }} />
-      <Text
-        style={styles.link}
-        href="https://github.com/nathanjhood/esbuild-scripts"
-        // target="_blank"
-        // rel="noopener noreferrer"
-      >
-        Powered by React Native with esbuild and Typescript
-      </Text>
+      <View style={styles.header}>
+
+        <Text style={styles.p}>
+          <Text style={styles.code}>Under construction...</Text>
+        </Text>
+        <View style={{ height: 12 }} />
+        <Text
+          style={styles.link}
+          href="https://github.com/nathanjhood/esbuild-scripts"
+          // target="_blank"
+          // rel="noopener noreferrer"
+        >
+          Powered by React Native with esbuild and Typescript
+        </Text>
+      </View>
     </View>
   )
 }
