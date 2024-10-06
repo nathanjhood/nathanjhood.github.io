@@ -1,31 +1,31 @@
 import type ReactNative = require('react-native');
 import rn = require('react-native');
 import logo = require('../assets/svg/logo.svg');
+import nativewind = require('nativewind');
 
 type LogoProps = {
-  width?: number,
-  height?: number,
-  scale?: number,
-  onLoadStart?: (() => void),
-  onLoadEnd?: (() => void),
-  onError?: ((error: ReactNative.NativeSyntheticEvent<ReactNative.ImageErrorEventData>) => void)
-}
+  width?: number;
+  height?: number;
+  scale?: number;
+  onLoadStart?: () => void;
+  onLoadEnd?: () => void;
+  onError?: (
+    error: ReactNative.NativeSyntheticEvent<ReactNative.ImageErrorEventData>
+  ) => void;
+};
 
 interface Logo {
-  (): JSX.Element,
-  (props?: LogoProps): JSX.Element
+  (): JSX.Element;
+  (props?: LogoProps): JSX.Element;
 }
 
 const Logo: Logo = (props?: LogoProps): JSX.Element => {
-
-  const {
-    Animated,
-    Easing,
-    StyleSheet
-  }: typeof ReactNative = rn;
+  const { Animated, Easing, StyleSheet }: typeof ReactNative = rn;
+  const { styled } = nativewind;
+  const StyledAnimatedImage = styled(Animated.Image);
 
   const source: ReactNative.ImageSourcePropType = {
-    uri: "data:image/svg+xml;base64," + logo
+    uri: 'data:image/svg+xml;base64,' + logo,
   };
 
   const spinValue: ReactNative.Animated.Value = new Animated.Value(0);
@@ -36,28 +36,29 @@ const Logo: Logo = (props?: LogoProps): JSX.Element => {
     toValue: 1, // from 0
     duration: 20000, // 20 seconds
     easing: Easing.linear,
-    useNativeDriver: false //true
+    useNativeDriver: false, //true
   };
 
-  const spinTiming = Animated.timing(
-    spinValue,
-    spinConfig
-  );
+  const spinTiming = Animated.timing(spinValue, spinConfig);
 
   const spin = spinValue.interpolate<string | number>({
     inputRange: [0, 1],
-    outputRange: ['0deg', '360deg']
+    outputRange: ['0deg', '360deg'],
   });
 
-  const animation = Animated.loop(
-    spinTiming
-  );
+  const animation = Animated.loop(spinTiming);
 
-  const onLoadStart: (() => void) | undefined = props && props.onLoadStart || undefined;
+  const onLoadStart: (() => void) | undefined =
+    (props && props.onLoadStart) || undefined;
 
-  const onLoadEnd: (() => void) | undefined = props && props.onLoadEnd || undefined;
+  const onLoadEnd: (() => void) | undefined =
+    (props && props.onLoadEnd) || undefined;
 
-  const onError: ((error: ReactNative.NativeSyntheticEvent<ReactNative.ImageErrorEventData>) => void) | undefined = props && props.onError || undefined;
+  const onError:
+    | ((
+        error: ReactNative.NativeSyntheticEvent<ReactNative.ImageErrorEventData>
+      ) => void)
+    | undefined = (props && props.onError) || undefined;
 
   const styles = StyleSheet.create({
     logo: {
@@ -65,32 +66,31 @@ const Logo: Logo = (props?: LogoProps): JSX.Element => {
       width: props?.width || 841.9,
       height: props?.height || 595.3,
       scale: props?.scale || 1.0,
-      transform: [{ rotate: spin }]
-    }
+      transform: [{ rotate: spin }],
+    },
   });
 
   return (
-    <Animated.Image
+    <StyledAnimatedImage
       source={source}
       style={styles.logo}
       onLoadStart={() => {
         animation.reset();
-        if(props && onLoadStart) onLoadStart();
+        if (props && onLoadStart) onLoadStart();
         return;
       }}
       onLoadEnd={() => {
         animation.start();
-        if(props && onLoadEnd) onLoadEnd();
+        if (props && onLoadEnd) onLoadEnd();
         return;
       }}
       onError={(error) => {
         animation.stop();
-        if (props && onError) onError(error)
+        if (props && onError) onError(error);
         return;
       }}
     />
-  )
-
-}
+  );
+};
 
 export = Logo;
