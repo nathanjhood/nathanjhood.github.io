@@ -5,7 +5,7 @@ import React = require('react');
 import rn = require('react-native');
 import App = require('./App');
 import AppJson = require('../app.json');
-import serviceWorker = require('./serviceWorker');
+import serviceWorkerRegistration = require('./serviceWorkerRegistration');
 
 interface index {
   (app: React.ComponentType<any>): void;
@@ -24,7 +24,7 @@ const index: index = (
   // Learn more about service workers:
   // https://create-react-app.dev/docs/making-a-progressive-web-app
   if (useSwr) {
-    serviceWorker.register({
+    serviceWorkerRegistration.register({
       onSuccess: (registration) => {
         if (registration.installing) {
           console.log('Service worker installing');
@@ -45,7 +45,7 @@ const index: index = (
       },
     });
   } else {
-    serviceWorker.unregister();
+    serviceWorkerRegistration.unregister();
   }
 
   AppRegistry.registerComponent(appName, () => app);
