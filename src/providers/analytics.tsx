@@ -5,15 +5,17 @@ import va = require('@vercel/analytics/react');
 type AnalyticsProviderProps = React.PropsWithChildren<va.AnalyticsProps>
 
 interface AnalyticsProvider {
-  (): React.JSX.Element
-  (props?: AnalyticsProviderProps): React.JSX.Element
+  (): JSX.Element
+  (props?: AnalyticsProviderProps): JSX.Element
 }
 
 const AnalyticsProvider: AnalyticsProvider = (
   props?: AnalyticsProviderProps
-): React.JSX.Element => {
+): JSX.Element => {
+
   const { View } = ReactNative;
   const { Analytics } = va;
+
   return (
     <View>
       {props && props.children}

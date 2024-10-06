@@ -1,43 +1,51 @@
-import type React = require('react');
+// import type React = require('react');
 import type ReactNative = require('react-native');
 import rn = require('react-native');
-
+import AppJson = require('../../app.json');
 import Logo = require('../components/Logo');
-
-type HomeProps = React.PropsWithChildren<{}>
+import '../nativewind';
+type HomeProps = React.PropsWithChildren<{
+  dimensions?: ReactNative.ScaledSize
+}>
 
 interface Home {
-  (props?: HomeProps): React.JSX.Element
+  (props?: HomeProps): JSX.Element
 }
 
-const Home = (props?: HomeProps): React.JSX.Element => {
+const Home = (props?: HomeProps): JSX.Element => {
 
   const {
     StyleSheet,
     Text,
     View,
+    useWindowDimensions
   } = rn;
 
-  const styles: {
-    header: ReactNative.ViewStyle;
-    code: ReactNative.TextStyle;
-    p: ReactNative.TextStyle;
-    link: ReactNative.TextStyle;
-} = StyleSheet.create<
-  {
+  const dimensions = props?.dimensions || useWindowDimensions();
+
+  const { scale } = dimensions;
+
+  const styles = StyleSheet.create<
+    {
+    container: ReactNative.ViewStyle,
     header: ReactNative.ViewStyle,
     code: ReactNative.TextStyle,
     p: ReactNative.TextStyle,
     link: ReactNative.TextStyle,
   }>(
-  {
+    {
+    container: {
+      color: 'white',
+      backgroundColor: '#282c34',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
     header: {
       minHeight: '100vh',
       fontSize: '10px + 2vmin',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-
     },
 
     code: {
@@ -52,19 +60,29 @@ const Home = (props?: HomeProps): React.JSX.Element => {
   });
 
   return (
-    <View style={{
-      color: 'white',
-      backgroundColor: '#282c34',
-      alignItems: 'center',
-      justifyContent: 'center',
-    }}>
-      <Logo />
+    <View style={styles.container}>
+
+      <View style={{ height: 12 }} />
+
+      <Text style={styles.p}>
+        Welcome to {AppJson.displayName}
+      </Text>
+
+      <View style={{ $$css:true, test: "w-10 h-10 bg-blue-500"}}><Text style={styles.p}>poo</Text></View>
+
+      <Logo
+
+        width={841.9 * scale}
+        height={595.3 * scale}
+      />
       <View style={styles.header}>
 
         <Text style={styles.p}>
           <Text style={styles.code}>Under construction...</Text>
         </Text>
+
         <View style={{ height: 12 }} />
+
         <Text
           style={styles.link}
           href="https://github.com/nathanjhood/esbuild-scripts"
