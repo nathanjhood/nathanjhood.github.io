@@ -68,8 +68,6 @@ const Home = (props?: HomeProps): JSX.Element => {
         Welcome to {AppJson.displayName}
       </Text>
 
-      <View style={{ $$css:true, test: "w-10 h-10 bg-blue-500"}}><Text style={styles.p}>poo</Text></View>
-
       <Logo
 
         width={841.9 * scale}
