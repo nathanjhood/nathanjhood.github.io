@@ -1,53 +1,42 @@
-// import type React from 'react';
 import type ReactNative = require('react-native');
 import rn = require('react-native');
 import AnalyticsProvider = require('./providers/analytics');
-import Home = require('./components/Home')
+import Home = require('./views/Home');
+import './assets/css/styles.css';
+import './nativewind';
+import nativewind = require('nativewind');
 
-type AppProps = React.PropsWithChildren<{
-  verbose?: true | false;
-}>
 
 interface App {
   (): JSX.Element
-  (props?: AppProps): JSX.Element
 }
-const App: App = (props?: AppProps): JSX.Element => {
+const App: App = (): React.JSX.Element => {
 
   const {
     StyleSheet,
-    View,
+    ScrollView,
     useWindowDimensions,
-  } = rn;
+  }: typeof ReactNative = rn;
 
-  const { width, height, scale } = useWindowDimensions();
+  const StyledScrollView = nativewind.styled(ScrollView)
 
-  const styles: {
-    app: ReactNative.ViewStyle;
-} = StyleSheet.create<
-  {
-    app: ReactNative.ViewStyle,
-  }>(
-  {
+  const { width, height, scale }: ReactNative.ScaledSize = useWindowDimensions();
+
+  const styles = StyleSheet.create({
     app: {
+      width: width,
+      height: height,
+      scale: scale,
       textAlign: 'center',
     }
-  });
+  })
 
   return (
-    <View style={[
-      styles.app,
-      {
-        width: width,
-        height: height,
-        scale: scale
-      },
-      StyleSheet.absoluteFill
-    ]}>
+    <StyledScrollView style={[styles.app, StyleSheet.absoluteFill]}>
       <AnalyticsProvider>
         <Home />
       </AnalyticsProvider>
-    </View>
+    </StyledScrollView>
   ) satisfies JSX.Element
 }
 
