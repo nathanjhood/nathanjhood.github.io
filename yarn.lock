@@ -1802,10 +1802,10 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@nathanjhood/esbuild-scripts@^0.0.20":
-  version "0.0.20"
-  resolved "https://registry.yarnpkg.com/@nathanjhood/esbuild-scripts/-/esbuild-scripts-0.0.20.tgz#a0eef0096493af29ed5415abba37c0c8ad7b741f"
-  integrity sha512-K8iDmLVi8zWy3kRSx8cnpGu8buOa4dkmbQnP6m3vgP5hPzV1KyyWkV0eqBzh/BsPBVBkxod/LWFaWHS6BQZj9Q==
+"@nathanjhood/esbuild-scripts@^0.0.21":
+  version "0.0.21"
+  resolved "https://registry.yarnpkg.com/@nathanjhood/esbuild-scripts/-/esbuild-scripts-0.0.21.tgz#4f9c0a0195615368c953c2b38c786cce0fc0fe17"
+  integrity sha512-VNisNEAJPJOAfNXoL7pyRwts6RGyDTkMqgUV4g5fVj8h9G4fvk+y8uuiVlDPaUFv6otkM25Sd1/oJLJTTmHXVQ==
   dependencies:
     browserslist "^4.24.0"
     ms "^2.1.3"
