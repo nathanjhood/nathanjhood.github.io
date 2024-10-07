@@ -3,7 +3,7 @@ import type ReactNative = require('react-native');
 import rn = require('react-native');
 import AppJson = require('../../app.json');
 import Logo = require('../components/Logo');
-import '../nativewind';
+// import '../nativewind';
 import nativewind = require('nativewind');
 
 type HomeProps = React.PropsWithChildren<{
@@ -78,7 +78,7 @@ const Home = (props?: HomeProps): JSX.Element => {
     'indigo',
     'violet',
     'purple',
-    'fuschia',
+    'fuchsia',
     'pink',
     'rose',
     'lightBlue',
@@ -114,16 +114,16 @@ const Home = (props?: HomeProps): JSX.Element => {
         </StyledText>
       </StyledView>
 
-      {/* <StyledText className="color-white"></StyledText>
+      <StyledText className="color-white"></StyledText>
       <StyledText className="color-black"></StyledText>
       <StyledText className="color-transparent"></StyledText>
       <StyledText className="color-inherit"></StyledText>
-      <StyledText className="color-current"></StyledText> */}
+      <StyledText className="color-current"></StyledText>
 
       {colors.map((color) => {
         return tones.map((tone) => {
           return (
-            <StyledText className={'color-' + color + '-' + tone}>
+            <StyledText key={color + tone} className={'color-' + color + '-' + tone}>
               {"<StyledText className='" +
                 'color-' +
                 color +
@@ -139,7 +139,7 @@ const Home = (props?: HomeProps): JSX.Element => {
         });
       })}
 
-      {/* <StyledText className="color-slate-50">'slate-50'</StyledText>
+      <StyledText className="color-slate-50">'slate-50'</StyledText>
       <StyledText className="color-slate-100">'slate-100'</StyledText>
       <StyledText className="color-slate-200">'slate-200'</StyledText>
       <StyledText className="color-slate-300">'slate-300'</StyledText>
@@ -348,17 +348,17 @@ const Home = (props?: HomeProps): JSX.Element => {
       <StyledText className="color-purple-800">'purple-800'</StyledText>
       <StyledText className="color-purple-900">'purple-900'</StyledText>
       <StyledText className="color-purple-950">'purple-950'</StyledText>
-      <StyledText className="color-fuschia-50">'fuschia-50'</StyledText>
-      <StyledText className="color-fuschia-100">'fuschia-100'</StyledText>
-      <StyledText className="color-fuschia-200">'fuschia-200'</StyledText>
-      <StyledText className="color-fuschia-300">'fuschia-300'</StyledText>
-      <StyledText className="color-fuschia-400">'fuschia-400'</StyledText>
-      <StyledText className="color-fuschia-500">'fuschia-500'</StyledText>
-      <StyledText className="color-fuschia-600">'fuschia-600'</StyledText>
-      <StyledText className="color-fuschia-700">'fuschia-700'</StyledText>
-      <StyledText className="color-fuschia-800">'fuschia-800'</StyledText>
-      <StyledText className="color-fuschia-900">'fuschia-900'</StyledText>
-      <StyledText className="color-fuschia-950">'fuschia-950'</StyledText>
+      <StyledText className="color-fuchsia-50">'fuchsia-50'</StyledText>
+      <StyledText className="color-fuchsia-100">'fuchsia-100'</StyledText>
+      <StyledText className="color-fuchsia-200">'fuchsia-200'</StyledText>
+      <StyledText className="color-fuchsia-300">'fuchsia-300'</StyledText>
+      <StyledText className="color-fuchsia-400">'fuchsia-400'</StyledText>
+      <StyledText className="color-fuchsia-500">'fuchsia-500'</StyledText>
+      <StyledText className="color-fuchsia-600">'fuchsia-600'</StyledText>
+      <StyledText className="color-fuchsia-700">'fuchsia-700'</StyledText>
+      <StyledText className="color-fuchsia-800">'fuchsia-800'</StyledText>
+      <StyledText className="color-fuchsia-900">'fuchsia-900'</StyledText>
+      <StyledText className="color-fuchsia-950">'fuchsia-950'</StyledText>
       <StyledText className="color-pink-50">'pink-50'</StyledText>
       <StyledText className="color-pink-100">'pink-100'</StyledText>
       <StyledText className="color-pink-200">'pink-200'</StyledText>
@@ -435,18 +435,18 @@ const Home = (props?: HomeProps): JSX.Element => {
       <StyledText className="color-blueGray-700">'blueGray-700'</StyledText>
       <StyledText className="color-blueGray-800">'blueGray-800'</StyledText>
       <StyledText className="color-blueGray-900">'blueGray-900'</StyledText>
-      <StyledText className="color-blueGray-950">'blueGray-950'</StyledText> */}
+      <StyledText className="color-blueGray-950">'blueGray-950'</StyledText>
 
-      {/* <StyledText className="bg-white"></StyledText>
+      <StyledText className="bg-white"></StyledText>
       <StyledText className="bg-black"></StyledText>
       <StyledText className="bg-transparent"></StyledText>
       <StyledText className="bg-inherit"></StyledText>
-      <StyledText className="bg-current"></StyledText> */}
+      <StyledText className="bg-current"></StyledText>
 
       {colors.map((color) => {
         return tones.map((tone) => {
           return (
-            <StyledText className={'bg-' + color + '-' + tone}>
+            <StyledText key={color + tone} className={'bg-' + color + '-' + tone}>
               {"<StyledText className='" +
                 'bg-' +
                 color +
@@ -462,7 +462,7 @@ const Home = (props?: HomeProps): JSX.Element => {
         });
       })}
 
-      {/* <StyledText className="bg-slate-50">'slate-50'</StyledText>
+      <StyledText className="bg-slate-50">'slate-50'</StyledText>
       <StyledText className="bg-slate-100">'slate-100'</StyledText>
       <StyledText className="bg-slate-200">'slate-200'</StyledText>
       <StyledText className="bg-slate-300">'slate-300'</StyledText>
@@ -671,17 +671,17 @@ const Home = (props?: HomeProps): JSX.Element => {
       <StyledText className="bg-purple-800">'purple-800'</StyledText>
       <StyledText className="bg-purple-900">'purple-900'</StyledText>
       <StyledText className="bg-purple-950">'purple-950'</StyledText>
-      <StyledText className="bg-fuschia-50">'fuschia-50'</StyledText>
-      <StyledText className="bg-fuschia-100">'fuschia-100'</StyledText>
-      <StyledText className="bg-fuschia-200">'fuschia-200'</StyledText>
-      <StyledText className="bg-fuschia-300">'fuschia-300'</StyledText>
-      <StyledText className="bg-fuschia-400">'fuschia-400'</StyledText>
-      <StyledText className="bg-fuschia-500">'fuschia-500'</StyledText>
-      <StyledText className="bg-fuschia-600">'fuschia-600'</StyledText>
-      <StyledText className="bg-fuschia-700">'fuschia-700'</StyledText>
-      <StyledText className="bg-fuschia-800">'fuschia-800'</StyledText>
-      <StyledText className="bg-fuschia-900">'fuschia-900'</StyledText>
-      <StyledText className="bg-fuschia-950">'fuschia-950'</StyledText>
+      <StyledText className="bg-fuchsia-50">'fuchsia-50'</StyledText>
+      <StyledText className="bg-fuchsia-100">'fuchsia-100'</StyledText>
+      <StyledText className="bg-fuchsia-200">'fuchsia-200'</StyledText>
+      <StyledText className="bg-fuchsia-300">'fuchsia-300'</StyledText>
+      <StyledText className="bg-fuchsia-400">'fuchsia-400'</StyledText>
+      <StyledText className="bg-fuchsia-500">'fuchsia-500'</StyledText>
+      <StyledText className="bg-fuchsia-600">'fuchsia-600'</StyledText>
+      <StyledText className="bg-fuchsia-700">'fuchsia-700'</StyledText>
+      <StyledText className="bg-fuchsia-800">'fuchsia-800'</StyledText>
+      <StyledText className="bg-fuchsia-900">'fuchsia-900'</StyledText>
+      <StyledText className="bg-fuchsia-950">'fuchsia-950'</StyledText>
       <StyledText className="bg-pink-50">'pink-50'</StyledText>
       <StyledText className="bg-pink-100">'pink-100'</StyledText>
       <StyledText className="bg-pink-200">'pink-200'</StyledText>
@@ -758,7 +758,7 @@ const Home = (props?: HomeProps): JSX.Element => {
       <StyledText className="bg-blueGray-700">'blueGray-700'</StyledText>
       <StyledText className="bg-blueGray-800">'blueGray-800'</StyledText>
       <StyledText className="bg-blueGray-900">'blueGray-900'</StyledText>
-      <StyledText className="bg-blueGray-950">'blueGray-950'</StyledText> */}
+      <StyledText className="bg-blueGray-950">'blueGray-950'</StyledText>
     </StyledView>
   );
 };

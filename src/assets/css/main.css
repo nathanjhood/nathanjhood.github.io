@@ -956,6 +956,61 @@ body {
   background-color: rgb(2 44 34 / var(--tw-bg-opacity));
 }
 
+.bg-fuchsia-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 232 255 / var(--tw-bg-opacity));
+}
+
+.bg-fuchsia-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 208 254 / var(--tw-bg-opacity));
+}
+
+.bg-fuchsia-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(240 171 252 / var(--tw-bg-opacity));
+}
+
+.bg-fuchsia-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(232 121 249 / var(--tw-bg-opacity));
+}
+
+.bg-fuchsia-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 244 255 / var(--tw-bg-opacity));
+}
+
+.bg-fuchsia-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(217 70 239 / var(--tw-bg-opacity));
+}
+
+.bg-fuchsia-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(192 38 211 / var(--tw-bg-opacity));
+}
+
+.bg-fuchsia-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(162 28 175 / var(--tw-bg-opacity));
+}
+
+.bg-fuchsia-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(134 25 143 / var(--tw-bg-opacity));
+}
+
+.bg-fuchsia-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(112 26 117 / var(--tw-bg-opacity));
+}
+
+.bg-fuchsia-950 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(74 4 78 / var(--tw-bg-opacity));
+}
+
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
@@ -2343,6 +2398,50 @@ body {
 
 .color-emerald-950 {
   color: #022c22;
+}
+
+.color-fuchsia-100 {
+  color: #fae8ff;
+}
+
+.color-fuchsia-200 {
+  color: #f5d0fe;
+}
+
+.color-fuchsia-300 {
+  color: #f0abfc;
+}
+
+.color-fuchsia-400 {
+  color: #e879f9;
+}
+
+.color-fuchsia-50 {
+  color: #fdf4ff;
+}
+
+.color-fuchsia-500 {
+  color: #d946ef;
+}
+
+.color-fuchsia-600 {
+  color: #c026d3;
+}
+
+.color-fuchsia-700 {
+  color: #a21caf;
+}
+
+.color-fuchsia-800 {
+  color: #86198f;
+}
+
+.color-fuchsia-900 {
+  color: #701a75;
+}
+
+.color-fuchsia-950 {
+  color: #4a044e;
 }
 
 .color-gray-100 {

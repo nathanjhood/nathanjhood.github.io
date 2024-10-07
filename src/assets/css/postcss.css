@@ -82,7 +82,7 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 
 abbr:where([title]) {
   -webkit-text-decoration: underline dotted;
-  text-decoration: underline dotted;
+          text-decoration: underline dotted;
 }
 
 /*
@@ -774,6 +774,50 @@ body {
 
 .bg-emerald-950 {
   background-color: rgba(2, 44, 34, 1);
+}
+
+.bg-fuchsia-100 {
+  background-color: rgba(250, 232, 255, 1);
+}
+
+.bg-fuchsia-200 {
+  background-color: rgba(245, 208, 254, 1);
+}
+
+.bg-fuchsia-300 {
+  background-color: rgba(240, 171, 252, 1);
+}
+
+.bg-fuchsia-400 {
+  background-color: rgba(232, 121, 249, 1);
+}
+
+.bg-fuchsia-50 {
+  background-color: rgba(253, 244, 255, 1);
+}
+
+.bg-fuchsia-500 {
+  background-color: rgba(217, 70, 239, 1);
+}
+
+.bg-fuchsia-600 {
+  background-color: rgba(192, 38, 211, 1);
+}
+
+.bg-fuchsia-700 {
+  background-color: rgba(162, 28, 175, 1);
+}
+
+.bg-fuchsia-800 {
+  background-color: rgba(134, 25, 143, 1);
+}
+
+.bg-fuchsia-900 {
+  background-color: rgba(112, 26, 117, 1);
+}
+
+.bg-fuchsia-950 {
+  background-color: rgba(74, 4, 78, 1);
 }
 
 .bg-gray-100 {
@@ -1942,6 +1986,50 @@ body {
 
 .color-emerald-950 {
   color: #022c22;
+}
+
+.color-fuchsia-100 {
+  color: #fae8ff;
+}
+
+.color-fuchsia-200 {
+  color: #f5d0fe;
+}
+
+.color-fuchsia-300 {
+  color: #f0abfc;
+}
+
+.color-fuchsia-400 {
+  color: #e879f9;
+}
+
+.color-fuchsia-50 {
+  color: #fdf4ff;
+}
+
+.color-fuchsia-500 {
+  color: #d946ef;
+}
+
+.color-fuchsia-600 {
+  color: #c026d3;
+}
+
+.color-fuchsia-700 {
+  color: #a21caf;
+}
+
+.color-fuchsia-800 {
+  color: #86198f;
+}
+
+.color-fuchsia-900 {
+  color: #701a75;
+}
+
+.color-fuchsia-950 {
+  color: #4a044e;
 }
 
 .color-gray-100 {
