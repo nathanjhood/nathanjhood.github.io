@@ -1,6 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "tsconfig",
+  "presets": [["react-app", { "flow": false, "typescript": true }]],
   "compilerOptions": {
     // from @tsconfig/node20
     "target": "es2022",
