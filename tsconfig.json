@@ -1,14 +1,11 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "tsconfig",
+  "presets": [["react-app", { "flow": false, "typescript": true }]],
   "compilerOptions": {
     // from @tsconfig/node20
     "target": "es2022",
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ESNext"
-    ],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     // taken from @tsconfig/strictest
     "strict": true,
     "allowUnusedLabels": false,
@@ -37,18 +34,13 @@
     // recommended
     "verbatimModuleSyntax": true,
     // custom
-    "jsx": "react-jsx",
+    "jsx": "preserve",
+    // "jsxImportSource": "nativewind",
     "composite": true,
     "declaration": true,
     "emitDeclarationOnly": true,
     "skipLibCheck": false,
-    "tsBuildInfoFile": ".cache/.tsbuildinfo",
-    "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ]
+    "tsBuildInfoFile": ".cache/.tsbuildinfo"
   },
   "include": [
     "tailwind.config.ts",
@@ -58,10 +50,10 @@
     "**/**/*.mjs",
     "**/**/*.js",
     "**/**/*.json",
-    "**/**/*.ts",
-    ".next/types/**/*.ts"
+    "**/**/*.ts"
   ],
   "exclude": [
+    ".watchmanconfig",
     "postcss.config.js",
     "eslint.config.mjs",
     "prettier.config.mjs",
